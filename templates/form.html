@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block main %}
+<main class="container">
+    <article>
+        <header>
+            <h1>
+                {% block form_name %}
+                {% endblock %}
+            </h1>
+        </header>
+        <form method="post">
+            {{form.hidden_tag()}}
+            <div class="grid">
+                    {{form.name}}
+                    {{form.password}}
+            </div>
+            <input type="submit">
+            </div>
+        </form>
+    </article>
+    <a href="{{url_for('index')}}" role="button">main</a>
+</main>
+{% endblock  %}

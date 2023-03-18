@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block main %}
+<main class="container">
+    <div class="grid">
+        {% if current_user.is_authenticated %}
+            <a href="{{url_for('cobra')}}"  role="button">play</a>
+            <a href="{{url_for('scores', score='no_score')}}"  role="button">scores</a>
+            <a href="{{url_for('logout')}}" role="button" class="secondary">logout</a>
+        {% else %}
+            <a href="{{url_for('register')}}" role="button">register</a>
+            <a href="{{url_for('login',)}}" role="button">login</a>
+        {% endif %}
+    </div>
+</main>
+{% endblock %}

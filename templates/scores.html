@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block main %}
+<main class="container">
+    <article>
+        <header>
+            <hgroup>
+                <h1>scores</h1>
+                <h2>{{current_user.name}} last score = <b>{{score}}</b></h2>
+            </hgroup>
+        </header>
+        <table>
+            <thead>
+                <tr><th>name</th><th>high score</th></tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td><i>{{user.name}}</i></td>
+                    <td><b>{{user.high_score}}</b></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <footer>
+            <a href="{{url_for('cobra')}}" role="button">play</a>
+            <a href="{{url_for('index')}}" role="button">main</a>
+        </footer>
+    </article>
+</main>
+{% endblock %}

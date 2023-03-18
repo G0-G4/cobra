@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/pico.css">
+    <title>{{ title }}</title>
+</head>
+<body>
+{% for message in get_flashed_messages() %}
+<mark>{{message}}</mark>
+{% endfor %}
+{% block main %}
+{% endblock %}
+</body>
+</html>
